@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <meta name="description" content="Just hide ads">
     <meta name="keywords" content="ads, hiding, css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="icon" href="/hide-ads/assets/favicon.png" sizes="24x24" type="image/png">
 </head>
 <body>
@@ -62,5 +61,23 @@
     </div>
     </div></div>
     <div class="clearfix"><br></div>
-</body>
+
+    <noscript id="deferred-styles">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
+    
+    </body>
 </html>
