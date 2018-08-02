@@ -1,1 +1,1 @@
-[id^=LO_VS] {visibility:hidden;}
+[id^=LO_VS], [id*=banner] {visibility:hidden;}
