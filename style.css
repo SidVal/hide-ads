@@ -1,1 +1,1 @@
-[id^=LO_VS], [id*=banner], [id*=ad], fbs-video {visibility:hidden;}
+[id^=LO_VS], [id*=banner], [id*=ad], [class^=video] {visibility:hidden;}
