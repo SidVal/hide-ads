@@ -1,15 +1,14 @@
 [id^=LO_VS], 
-[id*=banner], 
-[id*=ad],
-[id*=google],
-[class*=google],
-[class^=video], 
-[class*=ad], 
+div [id*=banner], 
+div [id*=ad],
+div [id*=google],
+div [class*=google],
+div [class^=video], 
+div [class*=ad],
+img [class*=ad],
 iframe [id*=ads],
 [data-ad-format],
 [data-variation]
 {visibility:hidden;}
-html {cursor:auto !important}
-body {background-image: none !important;background-color: #d9d9d9 !important}
 div [id*=conten] {background-color: #ffffff7d}
-.ayads-style {cursor:auto !important;background-image: none !important;background-color: #d9d9d9 !important;visibility:hidden !important;}
+.ayads-style {cursor:unset !important;background-image: none !important;background-color: #d9d9d9 !important;visibility:hidden !important;}
