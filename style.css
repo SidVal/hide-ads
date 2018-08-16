@@ -1,11 +1,14 @@
 [id^=LO_VS], 
 [id*=banner], 
-[id*=ad], 
+[id*=ad],
+[id*=google],
+[class*=google],
 [class^=video], 
 [class*=ad], 
 iframe [id*=ads],
 [data-ad-format],
 [data-variation]
 {visibility:hidden;}
-body[background-image*=ayads]
+body [id=blog],
+body [class*=post],
 {background-image: none !important;background-color: #d9d9d9 !important}
