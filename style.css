@@ -8,5 +8,5 @@
 iframe [id*=ads],
 [data-ad-format],
 [data-variation]
-{visibility:hidden;}
+{visibility:hidden;display:contents}
 body {background-image: none !important;background-color: #d9d9d9 !important}
