@@ -1,1 +1,12 @@
-[id^=LO_VS], [id*=banner], [id*=ad], [class^=video], [class*=ad], iframe [id*=ads], data-ad-format  {visibility:hidden;z-index: -1 !important;}
+[id^=LO_VS], 
+[id*=banner], 
+[id*=ad], 
+[class^=video], 
+[class*=ad], 
+iframe [id*=ads],
+data-ad-format  
+{
+  visibility:hidden;
+  z-index: -1 !important;
+}
+body {background-image: none !important;}
