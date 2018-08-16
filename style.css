@@ -1,1 +1,1 @@
-[id^=LO_VS], [id*=banner], [id*=ad], [class^=video] {visibility:hidden;}
+[id^=LO_VS], [id*=banner], [id*=ad], [class^=video], [class*=ad], [data-ad-format]  {visibility:hidden;z-index: -1 !important;}
