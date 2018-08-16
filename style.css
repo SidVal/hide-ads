@@ -1,6 +1,8 @@
 [id^=LO_VS], 
 div [id*=banner], 
 div [id*=ad],
+div [id*=anner],
+div [id*=lx],
 div [id*=google],
 div [class*=google],
 div [class^=video], 
