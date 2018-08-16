@@ -9,4 +9,4 @@ data-ad-format
   visibility:hidden;
   z-index: -1 !important;
 }
-body {background-image: none !important;}
+body {background-image: none !important;background-color: #d9d9d9 !important}
