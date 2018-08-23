@@ -12,7 +12,7 @@ div [class^=video],
 div [class*=ad],
 img [class*=ad],
 img [src*=ad],
-iframe [id*=ads],
+iframe,
 [data-ad-format],
 [data-variation]
 {visibility:hidden;}
