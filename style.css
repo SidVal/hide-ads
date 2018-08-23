@@ -11,6 +11,7 @@ div [class*=google],
 div [class^=video], 
 div [class*=ad],
 img [class*=ad],
+img [src*=ad],
 iframe [id*=ads],
 [data-ad-format],
 [data-variation]
