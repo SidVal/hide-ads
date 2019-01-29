@@ -10,12 +10,10 @@ div [id*=google] ins img,
 div [class*=google],
 div [class^=video], 
 div [class*=ad],
+div [class*=banner],
 img [class*=ad],
 img [src*=ad],
 iframe,
 [data-ad-format],
 [data-variation]
-{visibility:hidden;}
-div [id*=conten] {background-color: #ffffff7d}
-html {cursor:unset !important}
-body {background-image: none !important;background-color: #d9d9d9 !important}
+{display: none !important;}
