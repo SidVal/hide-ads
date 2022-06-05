@@ -17,6 +17,7 @@ div [class*=sticker]
 img [class*=ad],
 img [src^=ad],
 iframe,
+picture,
 [data-ad-format],
 [data-variation]
 {display: none !important;}
