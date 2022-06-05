@@ -13,7 +13,6 @@ div [class^=video],
 div [class^=ad],
 div [class*=banner],
 div [class*=loating],
-div [class*=swiper],
 div [class*=sticker]
 img [class*=ad],
 img [src^=ad],
