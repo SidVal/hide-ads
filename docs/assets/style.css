@@ -8,12 +8,14 @@ div [id*=lx] ins,
 div [id*=lx],
 div [id*=google] ins img,
 div [id*=loating],
+div [id*=ad-container], /* Nueva regla para ocultar cualquier "ad-container" */
+div [data-testid*=ad-container], /* Oculta anuncios con data-testid "ad-container" */
 div [class*=google],
 div [class^=video], 
 div [class^=ad],
 div [class*=banner],
 div [class*=loating],
-div [class*=sticker]
+div [class*=sticker],
 img [class*=ad],
 img [src^=ad],
 iframe,
@@ -21,4 +23,5 @@ picture,
 [data-ad-format],
 [data-variation]
 {display: none !important;}
+
 html {cursor:unset !important}
