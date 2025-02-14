@@ -8,8 +8,10 @@ div [id*=lx] ins,
 div [id*=lx],
 div [id*=google] ins img,
 div [id*=loating],
-div [id*=ad-container], /* Nueva regla para ocultar cualquier "ad-container" */
-div [data-testid*=ad-container], /* Oculta anuncios con data-testid "ad-container" */
+div [id*=ad-container], /* Oculta cualquier elemento con "ad-container" en el ID */
+div [data-testid*=ad-container], /* Oculta anuncios con data-testid="ad-container" */
+div [id*=inarticle-ad], /* Oculta cualquier elemento con "inarticle-ad" en el ID */
+div [data-testid*=inarticle-ad], /* Oculta anuncios con data-testid="inarticle-ad" */
 div [class*=google],
 div [class^=video], 
 div [class^=ad],
