@@ -20,6 +20,7 @@ div [class*=loating],
 div [class*=sticker],
 img [class*=ad],
 img [src^=ad],
+img[src*="logo"]
 iframe,
 picture,
 [data-ad-format],
