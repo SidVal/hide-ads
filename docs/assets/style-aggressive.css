@@ -1,0 +1,27 @@
+@import url("./style.css");
+
+/* reglas agresivas acá */
+iframe,
+picture,
+source,
+amp-ad,
+amp-embed,
+amp-iframe,
+amp-sticky-ad,
+amp-fx-flying-carpet,
+[class*="taboola"],
+[id*="taboola"],
+[class*="outbrain"],
+[id*="outbrain"],
+[class*="mgid"],
+[id*="mgid"],
+[class*="native-ad"],
+[id*="native-ad"],
+[class*="newsletter"],
+[id*="newsletter"],
+[class*="paywall"],
+[id*="paywall"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
