@@ -1,67 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Hide Ads</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta charset="utf-8">
-    <meta name="description" content="Just hide ads">
-    <meta name="keywords" content="ads, hiding, css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">    
-    <link rel="icon" href="/hide-ads/assets/favicon.png" sizes="24x24" type="image/png">
-</head>
-<body>
-<div class="container">
-    <h1>Hide Ads <small class="text-muted">Now</small></h1>
-    
-    <div class="alert alert-danger" role="alert">
-        The next button is NOT a link. <strong>PLEASE READ THIS:</strong> dont' click it right now <em>(here at this page)</em>. <br>
-        You must DRAG the button (link) and DROP to your Bookmark's Bar
-    </div>
-<div class="row">
- <div class="col-12 col-sm-4">
- <div class="card text-center">
- <div class="card-header">
-    Drag &amp; Drop to your Bookmark's Bar
-  </div>
-  <div class="card-body">
-    <a class="btn btn-lg btn-success" href="javascript:(function()%7Bjavascript%3A(function()%7B%0A%20%20%20%20%2F%2F%20Inyectar%20CSS%0A%20%20%20%20(function(i%2Cn%2Cj%2Ce%2Cc%2Ct%2Ccss)%7B%0A%20%20%20%20%20%20%20%20css%20%3D%20i.createElement(n)%3B%0A%20%20%20%20%20%20%20%20t%20%3D%20i.getElementsByTagName(c)%5B0%5D%3B%0A%20%20%20%20%20%20%20%20css.href%20%3D%20j%3B%0A%20%20%20%20%20%20%20%20css.rel%20%3D%20e%3B%0A%20%20%20%20%20%20%20%20t.insertAdjacentElement('beforeend'%2Ccss)%3B%0A%20%20%20%20%7D)(document%2C%20'link'%2C%20'https%3A%2F%2Fsidval.github.io%2Fhide-ads%2Fassets%2Fstyle.css'%2C%20'stylesheet'%2C%20'head')%3B%0A%0A%20%20%20%20%2F%2F%20Inyectar%20JS%0A%20%20%20%20var%20script%20%3D%20document.createElement('script')%3B%0A%20%20%20%20script.src%20%3D%20'https%3A%2F%2Fsidval.github.io%2Fhide-ads%2Fassets%2Fjs.js'%3B%0A%20%20%20%20script.type%20%3D%20'text%2Fjavascript'%3B%0A%20%20%20%20script.async%20%3D%20true%3B%0A%20%20%20%20document.head.appendChild(script)%3B%0A%7D)()%3B%7D)()%3B">H-ads!</a>
-  </div>
-</div>
-    </div>
-    
-    <div class="col-12 col-sm-8">
-    <div class="card"><div class="card-body">
-    <h3 class="card-title" id="how-to-use-it">How to use it</h3>
-        <p class="card-text">
-        <ul>
-        <li>Drag the link into your Bookmarks Bar</li>
-        <li>Go to a web site and enjoy reading something</li>
-        <li>Scroll down… more reading, goes up… and when ads appears...</li>
-        <li>Clic your bookmark’s link created in point 1.</li>
-        <li>Whalla! No more ads, it’s gone!</li>
-            <li><em>Oops!</em> If some ads are still on page, <a href="https://github.com/SidVal/hide-ads/issues/new?template=bug_report.md" title="Report a bug" class="badge badge-light">please report it now!</a></li>
-        </ul>
-        </p>
-        <p></p>
-        <div class="card-footer text-muted">
-            <p class="mb-0">Ps: if you want to reset the site, just press <kbd>F5</kbd> to refresh the site, and the <mark>ADS</mark> will be there again for you.</p>
-        </div>
-    </div></div> <!--card:card-body-->
-    </div>
-</div> <!--row-->
-    <div class="clearfix"><br></div>
-<div class="card">
-  <div class="card-body">
-      
-    <h3>How its works</h3>
-    
-    <p>When you press the button to "Hide Ads", you are calling <a href="https://github.com/SidVal/hide-ads/blob/master/docs/assets/style.css" target="_new" title="CSS file hide ass">this style (css file)</a>, which simply "hides" from your web browser all the ads that the page shows each time we are reading content.</p>
+  <meta charset="utf-8">
+  <title>Hide Ads</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Just hide ads">
+  <meta name="keywords" content="ads, hiding, css, bookmarklet">
+  <link rel="icon" href="/hide-ads/assets/favicon.png" sizes="24x24" type="image/png">
 
-    <h3>Testing and debugging</h3>
-<p>If you find an error, or want to help, or know more about this idea, you can go to the <a class="badge badge-info" href="https://github.com/SidVal/hide-ads/" title="Hide Ads Github repository">Hide-Ads Github repository</a>.</p>
-    
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #243044;
+      --primary: #22c55e;
+      --primary-hover: #16a34a;
+      --danger-bg: #3f1d1d;
+      --danger-text: #fecaca;
+      --danger-border: #7f1d1d;
+      --info: #38bdf8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(34, 197, 94, .16), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0;
+    }
+
+    .hero {
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    h1 span {
+      color: var(--muted);
+      font-size: .45em;
+      letter-spacing: -0.03em;
+    }
+
+    h2,
+    h3 {
+      margin-top: 0;
+      line-height: 1.2;
+    }
+
+    .alert {
+      padding: 16px 18px;
+      border: 1px solid var(--danger-border);
+      border-radius: 18px;
+      background: var(--danger-bg);
+      color: var(--danger-text);
+      margin-bottom: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(240px, 360px) 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .card {
+      background: color-mix(in srgb, var(--card) 88%, transparent);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+      overflow: hidden;
+    }
+
+    .card-header,
+    .card-footer {
+      padding: 16px 20px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, .03);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-footer {
+      border-top: 1px solid var(--border);
+      border-bottom: 0;
+    }
+
+    .card-body {
+      padding: 22px;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 28px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #052e16;
+      font-weight: 800;
+      font-size: 1.2rem;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(34, 197, 94, .25);
+      transition: transform .15s ease, background .15s ease;
+    }
+
+    .button:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-bottom: 0;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, .14);
+      color: var(--info);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    kbd,
+    mark {
+      border-radius: 6px;
+      padding: 2px 6px;
+    }
+
+    mark {
+      background: rgba(250, 204, 21, .22);
+      color: #fde68a;
+    }
+
+    kbd {
+      background: #020617;
+      color: #fff;
+      border: 1px solid var(--border);
+    }
+
+    .stack {
+      display: grid;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        padding: 28px 0;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>Hide Ads <span>Now</span></h1>
+    </section>
+
+    <div class="alert" role="alert">
+      The next button is <strong>not a normal link</strong>. Don’t click it on this page.
+      Drag it to your bookmarks bar instead.
     </div>
-    </div></div>
-    <div class="clearfix"><br></div>
-    </body>
+
+    <section class="grid">
+      <article class="card center">
+        <div class="card-header">
+          Drag &amp; drop to your bookmarks bar
+        </div>
+
+        <div class="card-body">
+          <a class="button" href="javascript:(function(){const css=document.createElement('link');css.href='https://sidval.github.io/hide-ads/assets/style.css';css.rel='stylesheet';document.head.appendChild(css);const script=document.createElement('script');script.src='https://sidval.github.io/hide-ads/assets/js.js';script.async=true;document.head.appendChild(script);})();">H-ads!</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <h2 id="how-to-use-it">How to use it</h2>
+
+          <ul>
+            <li>Drag the button into your bookmarks bar.</li>
+            <li>Go to a website and start reading.</li>
+            <li>When ads appear, click your saved bookmark.</li>
+            <li>Done. No more ads.</li>
+            <li>
+              <em>Oops!</em> If some ads are still visible,
+              <a class="badge" href="https://github.com/SidVal/hide-ads/issues/new?template=bug_report.md">report it here</a>.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-footer">
+          To reset the site, press <kbd>F5</kbd>. The <mark>ads</mark> will come back after refresh.
+        </div>
+      </article>
+    </section>
+
+    <section class="stack">
+      <article class="card">
+        <div class="card-body">
+          <h3>How it works</h3>
+
+          <p>
+            When you press the bookmarklet, it injects a CSS file and a small JavaScript file into the current page.
+            The CSS hides known ad containers. The JavaScript removes dynamic ads added after the page loads.
+          </p>
+
+          <h3>Testing and debugging</h3>
+
+          <p>
+            If you find an error, want to help, or want to know more about the idea,
+            visit the
+            <a class="badge" href="https://github.com/SidVal/hide-ads/">Hide Ads GitHub repository</a>.
+          </p>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
 </html>
