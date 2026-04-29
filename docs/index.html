@@ -11,17 +11,36 @@
   <style>
     :root {
       color-scheme: light dark;
-      --bg: #0f172a;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #243044;
+    
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
       --primary: #22c55e;
       --primary-hover: #16a34a;
-      --danger-bg: #3f1d1d;
-      --danger-text: #fecaca;
-      --danger-border: #7f1d1d;
-      --info: #38bdf8;
+      --danger-bg: #fee2e2;
+      --danger-text: #7f1d1d;
+      --danger-border: #fecaca;
+      --info: #0369a1;
+      --shadow: rgba(15, 23, 42, .08);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --card: #111827;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --border: #243044;
+        --primary: #22c55e;
+        --primary-hover: #16a34a;
+        --danger-bg: #3f1d1d;
+        --danger-text: #fecaca;
+        --danger-border: #7f1d1d;
+        --info: #38bdf8;
+        --shadow: rgba(0, 0, 0, .25);
+      }
     }
 
     * {
@@ -32,7 +51,7 @@
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(34, 197, 94, .16), transparent 35%),
+        radial-gradient(circle at top left, color-mix(in srgb, var(--primary) 16%, transparent), transparent 35%),
         var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -88,21 +107,21 @@
     }
 
     .card {
-      background: color-mix(in srgb, var(--card) 88%, transparent);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
       border: 1px solid var(--border);
       border-radius: 22px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+      box-shadow: 0 20px 60px var(--shadow);
       overflow: hidden;
     }
-
+    
     .card-header,
     .card-footer {
       padding: 16px 20px;
       color: var(--muted);
-      background: rgba(255, 255, 255, .03);
+      background: color-mix(in srgb, var(--card) 94%, var(--text) 6%);
       border-bottom: 1px solid var(--border);
     }
-
+    
     .card-footer {
       border-top: 1px solid var(--border);
       border-bottom: 0;
@@ -162,21 +181,31 @@
       padding: 2px 6px;
     }
 
-    mark {
-      background: rgba(250, 204, 21, .22);
-      color: #fde68a;
-    }
-
     kbd {
-      background: #020617;
-      color: #fff;
+      background: color-mix(in srgb, var(--text) 92%, var(--card));
+      color: var(--card);
       border: 1px solid var(--border);
+    }
+    
+    mark {
+      background: rgba(250, 204, 21, .25);
+      color: var(--text);
     }
 
     .stack {
       display: grid;
       gap: 24px;
       margin-top: 24px;
+    }
+
+    .button-danger {
+      background: #ef4444;
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(239, 68, 68, .25);
+    }
+    
+    .button-danger:hover {
+      background: #dc2626;
     }
 
     @media (max-width: 760px) {
@@ -227,10 +256,9 @@
     </div>
 
     <div class="card-body">
-      <a class="button" style="background:#ef4444; color:white; box-shadow:0 12px 30px rgba(239,68,68,.25);" 
-         href="javascript:(function(){const css=document.createElement('link');css.href='https://sidval.github.io/hide-ads/assets/style-aggressive.css';css.rel='stylesheet';document.head.appendChild(css);const script=document.createElement('script');script.src='https://sidval.github.io/hide-ads/assets/js-aggressive.js';script.async=true;document.head.appendChild(script);})();">
-        ☠ Destroy Ads
-      </a>
+      <a class="button button-danger" href="javascript:(function(){const css=document.createElement('link');css.href='https://sidval.github.io/hide-ads/assets/style-aggressive.css';css.rel='stylesheet';document.head.appendChild(css);const script=document.createElement('script');script.src='https://sidval.github.io/hide-ads/assets/js-aggressive.js';script.async=true;document.head.appendChild(script);})();">
+  ☠ Destroy Ads
+</a>
 
       <p style="margin-top:12px; color:#fca5a5; font-size:.9rem;">
         “Use Beast Mode for news sites” | Removes EVERYTHING. May break sites. Worth it.
