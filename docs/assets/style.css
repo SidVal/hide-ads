@@ -1,30 +1,60 @@
-[id^=LO_VS], 
-div [id*=banner], 
-div [id^=ad],
-div [id*=anner],
-div [id*=lx] ins img,
-div [id*=lx] ins iframe,
-div [id*=lx] ins,
-div [id*=lx],
-div [id*=google] ins img,
-div [id*=loating],
-div [id*=ad-container], /* Oculta cualquier elemento con "ad-container" en el ID */
-div [data-testid*=ad-container], /* Oculta anuncios con data-testid="ad-container" */
-div [id*=inarticle-ad], /* Oculta cualquier elemento con "inarticle-ad" en el ID */
-div [data-testid*=inarticle-ad], /* Oculta anuncios con data-testid="inarticle-ad" */
-div [class*=google],
-div [class^=video], 
-div [class^=ad],
-div [class*=banner],
-div [class*=loating],
-div [class*=sticker],
-img [class*=ad],
-img [src^=ad],
-img[src*="logo"]
-iframe,
-picture,
-[data-ad-format],
-[data-variation]
-{display: none !important;}
+/* IDs típicos de anuncios */
+[id^="LO_VS"],
+[id^="ad"],
+[id*="ad-"],
+[id*="-ad"],
+[id*="_ad"],
+[id*="ads"],
+[id*="banner"],
+[id*="inarticle-ad"],
+[id*="ad-container"],
+[id*="floating"],
+[id*="sponsor"],
+[id*="promo"] {
+  display: none !important;
+}
 
-html {cursor:unset !important}
+/* Clases típicas de anuncios */
+[class^="ad"],
+[class*=" ad"],
+[class*="-ad"],
+[class*="_ad"],
+[class*="ads"],
+[class*="banner"],
+[class*="inarticle-ad"],
+[class*="ad-container"],
+[class*="floating"],
+[class*="sticker"],
+[class*="sponsor"],
+[class*="promo"] {
+  display: none !important;
+}
+
+/* Data attributes comunes */
+[data-ad],
+[data-ads],
+[data-ad-format],
+[data-ad-client],
+[data-ad-slot],
+[data-testid*="ad-container"],
+[data-testid*="inarticle-ad"],
+[data-variation] {
+  display: none !important;
+}
+
+/* Google Ads / GPT / Adsense */
+ins.adsbygoogle,
+iframe[id^="google_ads"],
+iframe[src*="googlesyndication"],
+iframe[src*="doubleclick"],
+iframe[src*="googleads"],
+div[id*="google_ads"],
+div[class*="adsbygoogle"] {
+  display: none !important;
+}
+
+/* Revertir cursor invasivo */
+html,
+body {
+  cursor: unset !important;
+}
